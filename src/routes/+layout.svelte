@@ -10,15 +10,16 @@
 <div class="app bg-[#f6f4fc] px-4">
 	<Header {data} />
 	{#if !data.user}
-		<NotLoggedIn/>
-	{:else}
-		<div></div>
-		<main>
+		<div class="w-full lg:w-[50%] m-auto">
+			<NotLoggedIn/>
+		</div>
+	{/if}
+		
+		<main class="w-full lg:w-[50%] m-auto">
 			<slot />
 		</main>
 
 		<footer>
 			<p />
 		</footer>
-	{/if}
 </div>

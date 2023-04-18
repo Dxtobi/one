@@ -5,7 +5,7 @@ import { serializeNonPOJOs } from '$lib/utils/utils';
 export const handle = async ({ event, resolve }) => {
     try {
 
-        event.locals.pb = new PocketBase('http://127.0.0.1:8090/api/')
+        event.locals.pb = new PocketBase('http://127.0.0.1:8090/')
 
         event.locals.pb.authStore.loadFromCookie(event.request.headers.get('cookie') || '')
 

@@ -5,12 +5,12 @@
     let switchAuth = "register";
 </script>
 
-<div class="flex items-center text-center flex-col pt-4 min-h-screen">
+<div class="flex items-center text-center flex-col pt-4 gap-4 ">
     <div
-        class="h-[40vh] bg-white w-full rounded-xl flex justify-center items-center"
+        class=" w-full rounded-xl flex justify-center items-center"
     >
         <img
-            class="w-full h-full object-cover rounded-lg"
+            class="w-[50px] h-[50px] object-cover rounded-full m-auto"
             alt=""
             src="https://img.freepik.com/free-psd/3d-girl-character-checking-her-phone-while-sitting_23-2149086092.jpg?w=2000"
         />
@@ -21,26 +21,15 @@
             Explore several communities, find your favorite people and things
             that interests you
         </div>
-        {#if switchAuth == "register"}
-            <Register />
-        {:else}
-            <SignIn/>
-        {/if}
+       
         <div
-            class="flex w-full justify-between border-2 border-white rounded-xl"
+            class="flex w-full justify-between border-2 border-white rounded-xl p-2 gap-2"
         >
-            <button
-                on:click={() => (switchAuth = "register")}
-                class={`p-4 rounded-xl ${
-                    switchAuth == "register" && "bg-white"
-                }  w-[50%] `}>Register</button
-            >
-            <button
-                on:click={() => (switchAuth = "sign-in")}
-                class={`p-4 rounded-xl ${
-                    switchAuth == "sign-in" && "bg-white"
-                }  w-[50%]`}>Sign in</button
-            >
+            <a href="/register"
+                class={`p-4 rounded-xl  w-[50%] bg-white`}>Register</a>
+            <a href="/login"
+              
+                class={`p-4 rounded-xl bg-white w-[50%]`}>Sign in</a>
         </div>
     </div>
 </div>
