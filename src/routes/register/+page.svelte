@@ -29,8 +29,7 @@
     function validate(_event) {}
 </script>
 
-<div
-    class="flex flex-col justify-between items-center w-full p-4 bg-white rounded-xl gap-4">
+<div class="flex flex-col justify-between items-center w-full p-4 bg-white rounded-xl gap-4">
    
 
     <form class="flex flex-col justify-between items-center w-full p-4 bg-white rounded-xl gap-4" method="POST" action="?/register">

@@ -6,6 +6,7 @@ export const actions = {
     register: async ({locals, request}) =>{
         const body = Object.fromEntries(await request.formData());
 
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         let username = generateUsername(body.name.split(' ').join('')).toLocaleLowerCase()
 

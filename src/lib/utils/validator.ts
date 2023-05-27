@@ -20,9 +20,7 @@ export function validateEmail(email: string): boolean {
       return false;
     }
     const [, prefix, countryCode, nationalNumber] = match;
-    if (!africanCountryCodes.has(countryCode)) {
-      return false;
-    }
+   
     return true;
   }
   

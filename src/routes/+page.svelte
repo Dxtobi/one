@@ -1,6 +1,7 @@
 <script>
 	
-	
+	import { postStore, addPost, removePost } from '$lib/store/postStore.js';
+    import Post from '../components/landing/Post.svelte';
 </script>
 
 <svelte:head>
@@ -9,5 +10,5 @@
 </svelte:head>
 
 <section>
-
+<Post posts={$postStore.posts}/>
 </section>
