@@ -38,6 +38,6 @@ export const actions = {
             throw error(500, 'something went wrong')
         }
 
-        //throw redirect(303, '/profile')
+        throw redirect(303, '/profile')
     }
 }

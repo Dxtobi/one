@@ -57,7 +57,11 @@
         <!-- Display user's posts here -->
     </div>
     
-    <!-- Add more sections as needed -->
     
+    
+    <a href="/newchannel" class="w-full mt-8 border-b border-gray-300">
+        <div class="text-xl mb-4">new channel</div>
+        <!-- Display user's posts here -->
+    </a>
     
 </div>

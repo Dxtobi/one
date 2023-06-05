@@ -7,21 +7,24 @@ export function validateEmail(email: string): boolean {
 
 
  export function validateAfricanPhoneNumber(phoneNumber: string): boolean {
-    const phoneRegex = /^(\+|00)([1-9]\d{0,2})(\d{6,14})$/;
-    const africanCountryCodes = new Set([
-      "213", "216", "218", "220", "221", "222", "223", "224", "225", "226", "227", "228", "229", "230",
-      "231", "232", "233", "234", "235", "236", "237", "238", "239", "240", "241", "242", "243", "244",
-      "245", "246", "247", "248", "249", "250", "251", "252", "253", "254", "255", "256", "257", "258",
-      "260", "261", "262", "263", "264", "265", "266", "267", "268", "269", "27", "290", "291", "297",
-      "298", "299"
-    ]);
-    const match = phoneRegex.exec(phoneNumber);
-    if (!match) {
-      return false;
-    }
-    const [, prefix, countryCode, nationalNumber] = match;
-   
-    return true;
+      // Remove any non-digit characters from the phone number
+      const cleanedNumber = phoneNumber.replace(/\D/g, "");
+    
+      // Check if the cleaned number is 10 digits long (adjust for different formats if needed)
+      if (cleanedNumber.length !== 10) {
+        return false;
+      }
+    
+      // Check if the first digit is valid for the country (adjust as per your requirements)
+      const firstDigit = cleanedNumber.charAt(0);
+      if (firstDigit !== "0" && firstDigit !== "1") {
+        return false;
+      }
+    
+      // Additional validation rules can be added here based on your specific requirements
+      
+      // If all checks pass, the phone number is considered valid
+      return true;
   }
   
 
@@ -34,4 +37,6 @@ export  function validatePassword(password: string): boolean {
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#_.$%^&*]).{8,}$/;
     return passwordRegex.test(password);
   }
+  
+
   

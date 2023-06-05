@@ -14,14 +14,22 @@
         validatePassword,
         //validateUserName,
     } from "$lib/utils/validator";
+    import {
+        getCountryCode,
+    } from "$lib/utils/utils";
     import IoEyeSharp from "svelte-icons-pack/io/IoEyeSharp";
     import FaSolidEyeSlash from "svelte-icons-pack/fa/FaSolidEyeSlash";
-
+    getCCode()
     let uname = "";
     let password = "";
     let email = "";
     let phone = "";
     let hidePassword = true;
+    let ccode = ''
+    async function getCCode() {
+        const code = await getCountryCode()
+        ccode = code
+    }
 
     /**
      * @param {any} _event
@@ -54,7 +62,7 @@
             </div>
             <input
                 class="bg-none w-[80%] p-2 outline-none"
-                placeholder="phone: add +country-code"
+                placeholder={`${ccode} 000 000 000`}
                 bind:value={phone}
                 required
                 type="tel"
